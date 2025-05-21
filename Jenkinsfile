@@ -1,31 +1,42 @@
 pipeline {
     agent any
+
     tools {
-        maven 'maven'
+        maven 'maven' // Assure-toi que ce nom correspond à celui défini dans Jenkins (Global Tool Configuration)
     }
+
     stages {
-        stage('Nettoyage') {
+        stage('Build') {
             steps {
-                deleteDir()
+                sh 'mvn clean install'
             }
         }
-        stage('Clonage du dépôt') {
+
+        stage("Clean up") {
             steps {
-                sh 'git clone https://github.com/israhadjhassine/exp1spring.git'
+                deleteDir() // Supprime tous les fichiers du workspace Jenkins
             }
         }
-        stage('Génération de l\'image backend') {
+
+        stage("Clone repo") {
             steps {
-                dir('exp1spring') {
-                    sh 'mvn clean install'
-                    sh 'docker build -t hello-world .'
+                sh "git clone https://github.com/israhadjhassine/exp1spring.git"
+            }
+        }
+
+        stage("Generate backend image") {
+            steps {
+                dir("exp1spring") {
+                    sh "mvn clean install"
+                    sh "docker build -t hello-world ."
                 }
             }
         }
-        stage('Exécution de Docker Compose') {
+
+        stage("Run docker compose") {
             steps {
-                dir('exp1spring') {
-                    sh 'docker compose up -d'
+                dir("exp1spring") {
+                    sh "docker-compose up -d"
                 }
             }
         }
