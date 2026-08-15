@@ -1,14 +1,14 @@
  Spring Boot & Docker Integration Demo
 A lightweight Spring Boot application built with Java 11 and Maven, integrated with Docker, Docker Compose, and a Jenkins CI/CD pipeline for automated building and deployment.
 ---
-## 🚀 Overview
+##  Overview
 This project serves as a starter template and demonstration for:
 - Developing a basic REST API with **Spring Boot 2.6.7** and **Java 11**.
 - Packaging the Spring Boot application inside a **Docker container** using a multi-stage approach.
 - Coordinating deployments using **Docker Compose**.
 - Orchestrating a continuous delivery workflow with a **Jenkins Pipeline**.
 ---
-## 🛠️ Tech Stack & Dependencies
+##  Tech Stack & Dependencies
 - **Backend Framework**: Spring Boot `2.6.7` (Spring Web Starter)
 - **Language**: Java 11 (AdoptOpenJDK JRE Hotspot)
 - **Database Driver**: MySQL Connector Java (Runtime scope)
@@ -17,7 +17,7 @@ This project serves as a starter template and demonstration for:
 - **CI/CD**: Jenkins Pipeline (`Jenkinsfile`)
 ---
 
-## ⚡ Getting Started
+##  Getting Started
 ### Prerequisites
 Ensure you have the following installed:
 * **Java Development Kit (JDK) 11**
@@ -51,7 +51,7 @@ Ensure you have the following installed:
   curl http://localhost:8080/test
   ```
 ---
-## 🐳 Containerization & Deployment
+##  Containerization & Deployment
 ### Dockerfile
 The [Dockerfile](file:///d:/exp1spring/Dockerfile) packages the application to run in production:
 * **Base Image**: `adoptopenjdk:11-jre-hotspot`
@@ -71,7 +71,7 @@ docker-compose up -d
 ```
 Access the Dockerized app at `http://localhost:8084/test`.
 ---
-## 🔄 CI/CD Pipeline (Jenkins)
+##  CI/CD Pipeline (Jenkins)
 The repository includes a [Jenkinsfile](file:///d:/exp1spring/Jenkinsfile) defining a declarative pipeline with the following stages:
 1. **Build**: Runs `mvn clean install` to compile and package the application.
 2. **Clean up**: Deletes the Jenkins workspace to prepare for a fresh clone.
