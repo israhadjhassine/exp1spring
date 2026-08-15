@@ -1,5 +1,5 @@
- Spring Boot & Docker Integration Demo
-A lightweight Spring Boot application built with Java 11 and Maven, integrated with Docker, Docker Compose, and a Jenkins CI/CD pipeline for automated building and deployment.
+ Spring Boot & Docker Integration Demo.
+ A lightweight Spring Boot application built with Java 11 and Maven, integrated with Docker, Docker Compose, and a Jenkins CI/CD pipeline for automated building and deployment.
 ---
 ##  Overview
 This project serves as a starter template and demonstration for:
